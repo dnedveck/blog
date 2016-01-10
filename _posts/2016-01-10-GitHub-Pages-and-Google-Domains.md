@@ -71,11 +71,13 @@ Still didn't work.
  
 Saw a stack overflow answet that mentioned ["... I had to point the DNS only to my main github user name. The CNAME in the gh-page branch of user.github.com/project took care of the rest... "](http://stackoverflow.com/questions/26384498/custom-domain-for-github-project-pages)
 
-So I added another custom resource record
+So I removed the subdomain forward and I added another custom resource record
 
-		blog 	CNAME	1H	dnedveck.github.io
+		blog 	CNAME	1H	dnedveck.github.io.
 
-and now going to blog.dnedveck.com works. Whatever, the internet is magical.
+and now going to blog.dnedveck.com works. 
+
+Whatever, the internet is magical.
 
 
 
