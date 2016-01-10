@@ -1,0 +1,74 @@
+---
+layout: post
+title: "Lab 11/11 -- Summary Taxa plots"
+date: 2015-11-11
+categories: otu-picking alpha-rarefaction
+---
+
+The slides [can be found here.](https://docs.google.com/a/umn.edu/presentation/d/19bMnMv5lPtNbHBcudFtSWN2gMrXlU-8Pb5WfPKGJQ0c/edit?usp=sharing)
+
+## What we did
+
+- brainstormed questions for the datasets
+- formed groups to work on refining questions
+ - work in your groups on this, and share the google doc with my by Friday night
+- continued working on the summarize taxa assignment
+- little bit of lecture on t-tests and stats / p values
+ - Remember: *p-value is the chance that you would observe the data given the null is true* 
+- Started working on the visualizing of taxa plots in R.
+
+
+## Finishing up the `summarize_taxa_through_plots.py`
+
+so remember from last time how we used the bash scripts to run the summarize_taxa_through_plots scripts.
+We're going to continue to do that with the QIIME plotting that is looking at the category.
+To do that, let's copy our original sumtaxa.sh
+
+	cp sumtaxa.sh sumtaxa_body.sh
+
+Then go into the `sumtaxa_body.sh` and modify the output directory, and add the right `-c` flag
+it should look like:
+
+	#! /bin/bash
+	
+	module load qiime/1.7.0
+	
+	summarize_taxa_through_plots.py \
+    	    -i ~/otu_picking/output/otu_table_d8000.biom \
+        	-o taxa_summary_bodysite \
+	       	-m ~/../shared/HMP_5BS_mapping.txt \
+	        -c 'BodySite'
+	        
+After you have run both of those, scp it back home, to your home computer. Here's what I ran
+
+	 scp -r  dnedveck@login.msi.umn.edu:~/summarize_taxa/taxa* .
+
+Note the `taxa*`, the `*` acts as a wild card, and matches anything that begins with taxa, which are the two folders that I want to download.
+
+Once you download the directories, look in the `taxa_summary_plots/` directories, and look at the html files to view the graphs. 
+
+### Starting work on the Taxa Summary in R
+
+click on the moodle link for the taxa summary in R -- it should bring up an internet page.
+
+Open up RStudio, and make a new script. They are giving us a new script in this Taxa Summary page, and we are going to put it into a script file.
+
+Scroll down the page until you see the definition of the `taxa_lev_sum()` function. It's the part with all of the code.
+
+Copy that all into the R script we just made. Make sure you get the last trailing brace. 
+Once it's pasted into the RScript file, go up to the corner of the script window and click source. 
+The function should now be loaded into memory. You can check by looking at the Environment pane, and you should see the name of the function there.
+
+Now to load your data.
+Download the `HMP_5BS_metadata.txt` from moodle. 
+You're going to need to `scp` the rarefied OTU table that you made during the alpha rarefaction step to load that into R.
+
+once you have those two files, set your working directory to where they are located, and:
+
+	otutable <- read.delim(file = "otu_table_d8000.txt", skip =1, comment.char = "", header = TRUE)
+
+	hmb.mapping <- read.delim(file = "HMP_5BS_metadata.txt", header = TRUE)
+	
+That should bring them in, and that is as far as we got today. 
+
+
