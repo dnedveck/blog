@@ -19,7 +19,7 @@ Download and install SonicVizualizer from the [downloads page](https://www.sonic
 
 Find out that you need `librubberband2v5` -- turns out that it's not available for 18.04.
 
-I found a deb for 17.10 at [reposcope.com](https://reposcope.com/package/librubberband2v5), and I decided to give it a shot to install.
+I found a [.deb](http://archive.ubuntu.com/ubuntu/pool/universe/r/rubberband/librubberband2v5_1.8.1-6ubuntu2_amd64.deb) for 17.10 at [reposcope.com](https://reposcope.com/package/librubberband2v5), and I decided to give it a shot to install.
 
 Installed it, then Sonic Visualizer installed. 
 
