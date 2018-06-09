@@ -34,3 +34,5 @@ sudo cp nnls-chroma.so /usr/local/lib/vamp
 Started Sonic Visualizer, loaded in an mp3. On the menu I selected Transform > Analysis by Category > Chordino: Chord Estimate, and went with the defaults on the screen that popped up. It ran for a bit, and generated some chords. 
 
 Nice.
+
+*Thanks to [JHoermann for the video](https://www.youtube.com/watch?v=bQrleXXQmWY) that got me started on this.*
