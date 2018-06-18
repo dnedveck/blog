@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Extrracting chords from songs
+title: Extracting chords from songs
 date: 2018-06-09
 categories: music
 ---
