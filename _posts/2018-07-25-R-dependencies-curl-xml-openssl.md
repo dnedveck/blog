@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Installing dependencies for R: curl, XML, openssl
+title: Installing dependencies for curl, XML, openssl for R
 date: 2018-07-25
 categories: r
 ---
